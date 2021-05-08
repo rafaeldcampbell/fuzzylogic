@@ -276,16 +276,16 @@ na diferença entre temperatura interna e externa.
 Climatizacao = Domain("Climatização", -0.01, 10.01)
 Climatizacao.aquecMaximo = trapezoid(-0.01, 0, 2, 4)
 Climatizacao.aquecMaximo = Climatizacao.aquecMaximo.normalized()
-Climatizacao.aquecMaximo.plot()
+#Climatizacao.aquecMaximo.plot()
 Climatizacao.aquecNormal = triangular(3, 5)
-Climatizacao.aquecNormal.plot()
+#Climatizacao.aquecNormal.plot()
 Climatizacao.desligado = triangular(4, 6)
-Climatizacao.desligado.plot()
+#Climatizacao.desligado.plot()
 Climatizacao.arNormal = triangular(5, 7)
-Climatizacao.arNormal.plot()
+#Climatizacao.arNormal.plot()
 Climatizacao.arMaximo = trapezoid(6, 8, 10, 10.1)
 Climatizacao.arMaximo = Climatizacao.arMaximo.normalized()
-Climatizacao.arMaximo.plot()
+#Climatizacao.arMaximo.plot()
 
 regrasClimatizacao = Rule({
                     (TempExtPerc.extremamenteFrio, TempIntRoupa.extremamenteFrio): very(Climatizacao.aquecMaximo),
@@ -352,16 +352,17 @@ Nesse ponto, aplica-se o gosto pessoal sobre a decisão de ação tomada anterio
 ClimaPersonal = Domain("Climatização personalizada", -0.01, 10.01)
 ClimaPersonal.aquecMaximo = trapezoid(-0.01, 0, 2, 4)
 ClimaPersonal.aquecMaximo = Climatizacao.aquecMaximo.normalized()
-ClimaPersonal.aquecMaximo.plot()
+#ClimaPersonal.aquecMaximo.plot()
 ClimaPersonal.aquecNormal = triangular(3, 5)
-ClimaPersonal.aquecNormal.plot()
+#ClimaPersonal.aquecNormal.plot()
 ClimaPersonal.desligado = triangular(4, 6)
-ClimaPersonal.desligado.plot()
+#ClimaPersonal.desligado.plot()
 ClimaPersonal.arNormal = triangular(5, 7)
-ClimaPersonal.arNormal.plot()
+#ClimaPersonal.arNormal.plot()
 ClimaPersonal.arMaximo = trapezoid(6, 8, 10, 10.1)
 ClimaPersonal.arMaximo = Climatizacao.arMaximo.normalized()
-ClimaPersonal.arMaximo.plot()
+#ClimaPersonal.arMaximo.plot()
+
 
 regrasClimatizacaoPerson = Rule({
                                 (Climatizacao.aquecMaximo, GostoPess.frio): ClimaPersonal.aquecNormal,
