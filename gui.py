@@ -24,7 +24,6 @@ class Application(Frame):
         for i in self.acao.keys():
             recomenda += ACOES[i.name] + ": " + f'{(self.acao.get(i) * 100):.3g}' + "%\n"
         self.recomlabel.config(text=recomenda)
-        print("update")
 
     def getValues(self):
         return (self.tempExt.get(),
